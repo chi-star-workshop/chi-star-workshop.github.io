@@ -1,0 +1,20 @@
+/* Global Styles */
+html { 
+    scroll-behavior: smooth; 
+    background-color: #FEFDFB;
+}
+
+body {
+    background-color: #FEFDFB;
+}
+
+/* Scroll Offset for sticky header */
+section {
+    scroll-margin-top: 6rem;
+}
+
+/* Ensure sticky nav has a subtle border when scrolled */
+/* This is toggled via JS if needed, but we set a default here */
+#navbar {
+    transition: border-color 0.2s, background-color 0.2s;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "workshop-website",
+  "version": "1.0.0",
+  "description": "A simple single-page responsive website for a workshop.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "keywords": [
+    "workshop",
+    "website",
+    "responsive"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
