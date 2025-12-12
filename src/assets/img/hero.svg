@@ -22,9 +22,21 @@
         <line x1="20" y1="50" x2="130" y2="50" stroke="#dcfce7" stroke-width="2" />
         <line x1="20" y1="60" x2="100" y2="60" stroke="#dcfce7" stroke-width="2" />
         
-        <line x1="170" y1="40" x2="280" y2="40" stroke="#dcfce7" stroke-width="2" />
-        <line x1="170" y1="50" x2="280" y2="50" stroke="#dcfce7" stroke-width="2" />
-        <line x1="170" y1="60" x2="250" y2="60" stroke="#dcfce7" stroke-width="2" />
+        <!-- Right Page: Lines shifting into star pattern/expanding outward -->
+        <!-- Top expanding line -->
+        <path d="M 170,42 Q 225,35 280,28" stroke="#dcfce7" stroke-width="2" stroke-linecap="round" />
+        
+        <!-- New Small intermediate line -->
+        <path d="M 170,46 Q 210,44 240,41" stroke="#dcfce7" stroke-width="1" stroke-linecap="round" opacity="0.8" />
+        
+        <!-- Middle straight line -->
+        <path d="M 170,50 L 280,50" stroke="#dcfce7" stroke-width="2" stroke-linecap="round" />
+        
+        <!-- New Small intermediate line -->
+        <path d="M 170,54 Q 200,56 230,59" stroke="#dcfce7" stroke-width="1" stroke-linecap="round" opacity="0.8" />
+        
+        <!-- Bottom expanding line -->
+        <path d="M 170,58 Q 210,65 260,72" stroke="#dcfce7" stroke-width="2" stroke-linecap="round" />
     </g>
 
     <!-- Scaffolding (Augmentation) -->
@@ -55,8 +67,24 @@
         <circle cx="520" cy="110" r="2" fill="#15803d" />
     </g>
     
-    <!-- Floating Elements (Particles/Knowledge) -->
-    <circle cx="350" cy="50" r="4" fill="#4ade80" opacity="0.6" />
-    <circle cx="450" cy="90" r="6" fill="#4ade80" opacity="0.4" />
-    <circle cx="400" cy="150" r="2" fill="#4ade80" opacity="0.8" />
+    <!-- Floating Elements (STAR Motif & Bubbles) -->
+    <g fill="#4ade80">
+        <!-- Original bubbles -->
+        <circle cx="350" cy="50" r="3" opacity="0.5" />
+        <circle cx="450" cy="90" r="4" opacity="0.3" />
+        <circle cx="400" cy="150" r="2" opacity="0.7" />
+        
+        <!-- New Subtle Stars (Sparkles) -->
+        <!-- Star 1 (Left, higher) -->
+        <path d="M250 100 L253 108 L261 111 L253 114 L250 122 L247 114 L239 111 L247 108 Z" opacity="0.4" transform="scale(0.8) translate(100,0)" />
+        
+        <!-- Star 2 (Right, near scaffolding) -->
+        <path d="M550 80 L552 86 L558 88 L552 90 L550 96 L548 90 L542 88 L548 86 Z" opacity="0.5" />
+        
+        <!-- Star 3 (Center top, small) -->
+        <path d="M400 30 L401.5 34.5 L406 36 L401.5 37.5 L400 42 L398.5 37.5 L394 36 L398.5 34.5 Z" opacity="0.6" />
+        
+        <!-- Star 4 (Bottom right floating) -->
+        <path d="M500 130 L502 135 L507 137 L502 139 L500 144 L498 139 L493 137 L498 135 Z" opacity="0.3" transform="scale(0.7) translate(200, 50)" />
+    </g>
 </svg>

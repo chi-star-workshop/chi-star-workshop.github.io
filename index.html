@@ -14,10 +14,9 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Tailwind CSS (CDN) with Typography Plugin -->
-    <!-- We load this once with the plugin parameter -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
 
-    <!-- Custom Configuration (Inlined to prevent loading issues) -->
+    <!-- Custom Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -26,10 +25,7 @@
                         sans: ['Urbanist', 'sans-serif'],
                     },
                     colors: {
-                        // Ivory/Paper palette - Subtle warmth
                         paper: '#FEFDFB',
-                        
-                        // Forest Green palette - Professional & Academic
                         forest: {
                             50: '#f0fdf4',
                             100: '#dcfce7',
@@ -38,11 +34,10 @@
                             400: '#4ade80',
                             500: '#22c55e',
                             600: '#16a34a',
-                            700: '#15803d', // Primary Link/Action
-                            800: '#166534', // Darker text
-                            900: '#14532d', // Headers
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
                         },
-                        // Neutral Stone
                         stone: {
                             50: '#fafaf9',
                             100: '#f5f5f4',
@@ -115,8 +110,8 @@
                 <!-- Desktop Nav Links -->
                 <div class="hidden sm:flex space-x-8 text-sm font-semibold text-stone-600">
                     <a href="#" class="hover:text-forest-700 transition-colors">Home</a>
-                    <a href="#about" class="hover:text-forest-700 transition-colors">About</a>
-                    <a href="#cfp" class="hover:text-forest-700 transition-colors">Participation</a>
+                    <a href="#call-for-papers" class="hover:text-forest-700 transition-colors">Call for Papers</a>
+                    <a href="#timeline" class="hover:text-forest-700 transition-colors">Timeline</a>
                     <a href="#program" class="hover:text-forest-700 transition-colors">Program</a>
                     <a href="#organizers" class="hover:text-forest-700 transition-colors">Organizers</a>
                 </div>
@@ -134,101 +129,108 @@
     <main class="max-w-4xl mx-auto px-6 py-12">
 
         <!-- Header / Banner Section -->
-        <header class="mb-16 border-b border-stone-200 pb-10">
-            
+        <header class="mb-10 pb-5">
             <!-- Hero Illustration -->
             <div class="w-full h-64 md:h-80 mb-10 bg-forest-50/50 rounded-2xl border border-forest-100 overflow-hidden relative flex items-center justify-center">
                 <img src="src/assets/img/hero.svg" alt="Abstract scaffolding rising from an open book" class="w-full h-full object-cover opacity-90">
             </div>
 
+
             <div class="flex items-center gap-2 text-forest-700 font-bold mb-4 text-xs uppercase tracking-widest">
-                <span>CHI 2026 Workshop</span>
+                <a href="https://chi2026.acm.org/" target="_blank" rel="noopener noreferrer" class="hover:underline">CHI 2026 Workshop</a>
                 <span class="text-stone-300">&bull;</span>
                 <span>Barcelona, Spain</span>
+                <span class="text-stone-300">&bull;</span>
+                <span>13–17 April 2026</span>
             </div>
             <h1 class="text-5xl sm:text-6xl font-black text-forest-900 mb-6 leading-tight tracking-tight">
                 Science and Technology for <br class="hidden sm:block"/>
                 <span class="text-forest-700">Augmenting Reading</span> (STAR)
             </h1>
             <p class="text-xl sm:text-2xl text-stone-600 leading-relaxed max-w-2xl font-medium">
-                Defining high-impact areas of development and standards of success for the future of reading interfaces.
+                What does the future hold for how we read?
             </p>
         </header>
 
-        <!-- About / Overview Section -->
-        <section id="about" class="mb-20 scroll-mt-24">
-            <h2 class="text-2xl font-bold text-forest-900 mb-6 pb-2 border-b border-stone-200">About</h2>
+        <!-- Submission Details Box -->
+        <div class="bg-white border border-stone-200 rounded-xl p-8 my-8 not-prose shadow-sm">
+            <h3 class="text-lg font-bold text-forest-900 mb-4">Submission Details</h3>
+            <div class="space-y-3 text-stone-600">
+                <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+                    <span class="font-bold text-stone-900 w-24 shrink-0">Format</span>
+                    <span>2-4 page paper in <a href="https://chi2026.acm.org/chi-publication-formats/" class="text-forest-700 underline hover:text-forest-900">2 column SIGCHI format</a></span>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+                    <span class="font-bold text-stone-900 w-24 shrink-0">Content</span>
+                    <span>Including but not limited to: proof of concepts, preliminary results, or positions. The main requirement is that your submission prepares you with an idea to bring to the workshop.</span>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+                    <span class="font-bold text-stone-900 w-24 shrink-0">Audience</span>
+                    <span>Submissions are encouraged from junior and senior researchers from HCI, AI, and any field relevant to reading.</span>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+                    <span class="font-bold text-stone-900 w-24 shrink-0">Contact</span>
+                    <a href="mailto:star-workshop@googlegroups.com" class="text-forest-700 underline hover:text-forest-900 font-semibold">star-workshop@googlegroups.com</a>
+                </div>
+            </div>
+
+            <!-- Centered Portal Button -->
+            <div class="mt-8 flex justify-center">
+                <a href="https://forms.gle/tYqyFY5tk6mJXq6XA" target="_blank" class="inline-flex items-center gap-2 bg-forest-600 hover:bg-forest-700 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-sm">
+                    Go to Submission Portal
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Call for Papers Section (Combined CFP & About) -->
+        <section id="call-for-papers" class="mb-20 scroll-mt-24">
+            <h2 class="text-2xl font-bold text-forest-900 mb-6 pb-2 border-b border-stone-200">Call for Papers</h2>
             <div class="prose prose-stone prose-lg">
                 <p>
-                    Reading is one of the most ubiquitous modes for consuming information. Better reading technology could transform texts on demand so that they are easier to read, surface hard-to-find information, support synthesis, and better engage readers. The possibilities have been considerably expanded with the maturation of AI.
+                    We are always reading, whether it is a research paper, news article, text message, chatbot response, or website. Better reading technology could transform texts on demand so that they are easier to read, surface hard-to-find information or support synthesis.
                 </p>
                 <p>
-                    Recent changes in the technological landscape are significantly changing the reading experience. AI has introduced many new possibilities for interfaces to augment or transform text to be more rapidly scanned, navigated, understood, and compared to other texts.
+                    Recent changes in the technological landscape are significantly changing the reading experience. AI has introduced many new possibilities for interfaces to augment or transform text to be more rapidly scanned, navigated, understood, and compared to other texts. What does this future hold for reading?
                 </p>
                 <p>
-                    The purpose of this workshop is to provide a platform for the growing cohort of HCI and AI researchers interested in augmented reading interfaces to define high-impact areas of development and standards of success.
+                    <strong> Join us at the first CHI workshop on the Science & Technology of Augmented Reading (STAR). </strong> Come together with researchers from HCI and AI to work on exciting topics including but not limited to:
                 </p>
                 
-                <h3 class="text-lg font-bold text-forest-800 mt-8 mb-4">Key Topics</h3>
-                <ul class="list-none pl-0 space-y-4">
-                    <li class="pl-4 border-l-2 border-forest-200">
-                        <strong class="text-stone-900">Novel Interface Techniques:</strong> Speculative design and collaborative prototyping of exciting new interfaces, tools, and features.
-                    </li>
-                    <li class="pl-4 border-l-2 border-forest-200">
-                        <strong class="text-stone-900">Emerging Problems:</strong> Identifying detrimental effects and challenges as reading affordances alter.
-                    </li>
-                    <li class="pl-4 border-l-2 border-forest-200">
-                        <strong class="text-stone-900">New Evaluation Techniques:</strong> Articulating goals, taking inventory of methods, and ideating gaps for evaluation.
-                    </li>
+                <ul>
+                    <li><strong>New designs for augmented reading</strong>,interfaces that in some way alter the text we read.</li>
+                    <li><strong>Reading interfaces in different domains</strong>, such as education, news consumption, literature synthesis, or reading for entertainment.</li>
+                    <li><strong>Contexts where reading is an integral but perhaps understudied task</strong>, such as legal reasoning, scientific discovery, or writing.</li>
+                    <li><strong>The future of reading with AI</strong>, or, does reading still matter?</li>
                 </ul>
-            </div>
-        </section>
 
-                <!-- CFP Section -->
-        <section id="cfp" class="mb-20 scroll-mt-24">
-            <h2 class="text-2xl font-bold text-forest-900 mb-6 pb-2 border-b border-stone-200">Call for Participation</h2>
-            <div class="prose prose-stone prose-lg">
+                <h3 class="text-xl font-bold text-forest-900 mt-10 mb-4">Details</h3>
                 <p>
-                    Are you interested in what the future holds for how we read? Then join us at the first CHI workshop on the Science & Technology of Augmented Reading (STAR). Come together with researchers from HCI and AI to work on the most important questions in augmented reading.
+                    Accepted submissions will be posted or linked in non-archival form on the workshop website. One author of each accepted submission must attend the workshop and one day of CHI '26.
                 </p>
-
-                <p>
-                    Like, can AI help me read my research papers? What about a novel, or the immense amount of text generated by AI itself? Should it? If I design interfaces that explain text content on-demand, will it distract my users, or help them read more? How will deployed tools and agents change reading behavior at scale?
-                </p>
-
-                <div class="bg-white border border-stone-200 rounded-xl p-8 my-8 not-prose shadow-sm">
-                    <h3 class="text-lg font-bold text-forest-900 mb-4">Submission Details</h3>
-                    <div class="space-y-3 text-stone-600">
-                        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
-                            <span class="font-bold text-stone-900 w-24 shrink-0">Format</span>
-                            <span>2-4 page paper in 2-column SIGCHI format</span>
-                        </div>
-                        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
-                            <span class="font-bold text-stone-900 w-24 shrink-0">Content</span>
-                            <span>Including but not limited to: proof of concepts, preliminary results, or positions. The main requirement is that your submission prepares you with an idea to bring to the workshop.</span>
-                        </div>
-                        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
-                            <span class="font-bold text-stone-900 w-24 shrink-0">Portal</span>
-                            <a href="https://new.precisionconference.com/" target="_blank" class="text-forest-700 underline hover:text-forest-900 font-semibold">Submission Portal</a>
-                        </div>
-                        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
-                            <span class="font-bold text-stone-900 w-24 shrink-0">Audience</span>
-                            <span>Submissions are encouraged from junior and senior researchers alike across the full spectrum of work.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <p>
-                    Accepted submissions will be posted in non-archival form on the workshop website and arXiv. One author of each accepted submission must attend the workshop and one day of CHI '26.
-                </p>
-
                 <p>
                     At the workshop, you will participate in round-the-room 1-minute lightning talks, followed by speculative design and research activities in small interest groups formed at the event. Groups will be enriched with brief primer documents on classic theories of reading. We can't wait to see you there!
                 </p>
+
+                <h3 id="timeline" class="text-xl font-bold text-forest-900 mt-10 mb-4 scroll-mt-24">Timeline</h3>
+                <div class="space-y-2 not-prose text-stone-600">
+                    <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+                        <span class="font-bold text-forest-700 w-40 shrink-0">Feb 5th</span>
+                        <span>Deadline for submissions</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+                        <span class="font-bold text-forest-700 w-40 shrink-0">Feb 19th</span>
+                        <span>Decisions Notification</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+                        <span class="font-bold text-forest-700 w-40 shrink-0">April 13th – 17th</span>
+                        <span>CHI 2026</span>
+                    </div>
+                </div>
             </div>
         </section>
-
-         <!-- Program / Agenda Section -->
+        
+        <!-- Program Section -->
         <section id="program" class="mb-20 scroll-mt-24">
             <h2 class="text-2xl font-bold text-forest-900 mb-6 pb-2 border-b border-stone-200">Program</h2>
             
@@ -246,7 +248,7 @@
                     <div class="sm:w-24 flex-shrink-0 font-bold text-forest-600 text-sm pt-1 tracking-wider group-hover:text-forest-800 transition-colors">Session 2</div>
                     <div>
                         <h3 class="font-bold text-stone-900 text-lg">Introductions (Lightning Talks)</h3>
-                        <p class="text-stone-600 mt-1">Each participant presents a single slide on "what they are thinking about right now" (1 min/person).</p>
+                        <p class="text-stone-600 mt-1">Each participant presents a single slide on what they are thinking about right now in reading (1 min/person).</p>
                     </div>
                 </div>
                 <!-- Item -->
@@ -254,103 +256,123 @@
                     <div class="sm:w-24 flex-shrink-0 font-bold text-forest-600 text-sm pt-1 tracking-wider group-hover:text-forest-800 transition-colors">Session 3</div>
                     <div>
                         <h3 class="font-bold text-stone-900 text-lg">Affinity Group Activities</h3>
-                        <p class="text-stone-600 mt-1">Small groups focusing on: Novel Interfaces, Emerging Problems, or Evaluation Techniques.</p>
+                        <p class="text-stone-600 mt-1">Small group activities focusing on novel interface ideas, emerging problems in reading, or promising evaluation techniques.</p>
                     </div>
                 </div>
             </div>
         </section>
        
-<!-- Organizers Section -->
-<section id="organizers" class="mb-20 scroll-mt-24">
-    <h2 class="text-2xl font-bold text-forest-900 mb-8 pb-2 border-b border-stone-200">Organizers</h2>
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        
-        <div class="group relative">
-            <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg cursor-help">Tal August</h3>
-            <p class="text-sm text-stone-500 font-medium mb-1">Univeristy of Illinois Urbana Champaign</p>
-            <a href="mailto:taugust@illinois.edu" class="text-xs text-forest-600 hover:underline flex items-center gap-1 font-semibold">
-                <i data-lucide="mail" class="w-3 h-3"></i> Contact
-            </a>
-            <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
-                <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
-                <p class="leading-relaxed">Assistant professor at UIUC. Improves communication of knowledge-intensive text by adapting language to audiences. Develops reading and writing innovations for medical, legal, scientific, and instructional texts.</p>
-            </div>
-        </div>
+        <!-- Organizers Section -->
+        <section id="organizers" class="mb-20 scroll-mt-24">
+            <h2 class="text-2xl font-bold text-forest-900 mb-8 pb-2 border-b border-stone-200">Organizers</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                
+                <div class="group relative">
+                    <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg">
+                        <a href="https://talaugust.github.io/" target="_blank" rel="noopener noreferrer" class="hover:underline">Tal August</a>
+                    </h3>
+                    <p class="text-sm text-stone-500 font-medium mb-1">University of Illinois Urbana Champaign</p>
+                    <a href="mailto:taugust@illinois.edu" class="text-xs text-forest-600 hover:underline flex items-center gap-1 font-semibold">
+                        <i data-lucide="mail" class="w-3 h-3"></i> Contact
+                    </a>
+                    <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
+                        <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
+                        <p class="leading-relaxed">Improves communication of knowledge-intensive text by adapting language to audiences. Develops reading and writing innovations for medical, legal, scientific, and instructional texts.</p>
+                    </div>
+                </div>
 
-        <div class="group relative">
-            <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg cursor-help">Andrew Head</h3>
-            <p class="text-sm text-stone-500 font-medium">University of Pennsylvania</p>
-            <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
-                <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
-                <p class="leading-relaxed">Develops novel interactions for reading and reasoning. Lowers barriers to understanding complex technical content. Led work on AI2's Semantic Reader and developed interfaces for augmented reading of scholarly texts, math, code, and medical documents.</p>
-            </div>
-        </div>
+                <div class="group relative">
+                    <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg">
+                        <a href="https://andrewhead.info/" target="_blank" rel="noopener noreferrer" class="hover:underline">Andrew Head</a>
+                    </h3>
+                    <p class="text-sm text-stone-500 font-medium">University of Pennsylvania</p>
+                    <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
+                        <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
+                        <p class="leading-relaxed">Develops novel interactions for reading and reasoning. Lowers barriers to understanding complex technical content. Led work on AI2's Semantic Reader and developed interfaces for augmented reading of scholarly texts, math, code, and medical documents.</p>
+                    </div>
+                </div>
 
-        <div class="group relative">
-            <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg cursor-help">Alexa Siu</h3>
-            <p class="text-sm text-stone-500 font-medium">Adobe Research</p>
-            <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
-                <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
-                <p class="leading-relaxed">Research scientist focused on human-AI interactions that improve productivity and accessibility. Recent work on sensemaking over document collections, document Q&A, and editing. Contributed to Acrobat AI Assistant.</p>
-            </div>
-        </div>
+                <div class="group relative">
+                    <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg">
+                        <a href="https://research.adobe.com/person/alexa-siu/" target="_blank" rel="noopener noreferrer" class="hover:underline">Alexa Siu</a>
+                    </h3>
+                    <p class="text-sm text-stone-500 font-medium">Adobe Research</p>
+                    <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
+                        <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
+                        <p class="leading-relaxed">Research scientist focused on human-AI interactions that improve productivity and accessibility. Recent work on sensemaking over document collections, document Q&A, and editing. Contributed to Acrobat AI Assistant.</p>
+                    </div>
+                </div>
 
-        <div class="group relative">
-            <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg cursor-help">Elena L. Glassman</h3>
-            <p class="text-sm text-stone-500 font-medium">Harvard University</p>
-            <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
-                <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
-                <p class="leading-relaxed">Builds AI-resilient interfaces that augment skimming, writing, and close reading of code and text. Specializes in leveraging theories of human cognition to help users form mental models from concrete examples.</p>
-            </div>
-        </div>
+                <div class="group relative">
+                    <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg">
+                        <a href="https://glassmanlab.seas.harvard.edu/glassman.html" target="_blank" rel="noopener noreferrer" class="hover:underline">Elena L. Glassman</a>
+                    </h3>
+                    <p class="text-sm text-stone-500 font-medium">Harvard University</p>
+                    <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
+                        <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
+                        <p class="leading-relaxed">Builds AI-resilient interfaces that augment skimming, writing, and close reading of code and text. Specializes in leveraging theories of human cognition to help users form mental models from concrete examples.</p>
+                    </div>
+                </div>
 
-        <div class="group relative">
-            <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg cursor-help">Jonathan Kummerfeld</h3>
-            <p class="text-sm text-stone-500 font-medium">University of Sydney</p>
-            <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
-                <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
-                <p class="leading-relaxed">Focuses on interactions between people and NLP systems. Develops more effective algorithms, workflows, and systems for collaboration including rapid text reading and methods for highlighting differences across language model outputs.</p>
-            </div>
-        </div>
+                <div class="group relative">
+                    <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg">
+                        <a href="https://www.jkk.name/" target="_blank" rel="noopener noreferrer" class="hover:underline">Jonathan Kummerfeld</a>
+                    </h3>
+                    <p class="text-sm text-stone-500 font-medium">University of Sydney</p>
+                    <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
+                        <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
+                        <p class="leading-relaxed">Focuses on interactions between people and NLP systems. Develops more effective algorithms, workflows, and systems for collaboration including rapid text reading and methods for highlighting differences across language model outputs.</p>
+                    </div>
+                </div>
 
-        <div class="group relative">
-            <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg cursor-help">Joseph Chee Chang</h3>
-            <p class="text-sm text-stone-500 font-medium">Allen Institute for AI</p>
-            <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
-                <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
-                <p class="leading-relaxed">Senior researcher focused on human-AI systems for sensemaking and managing information overload. Recent work centers on literature review support tools for searching, discovering, and synthesizing research papers.</p>
-            </div>
-        </div>
+                <div class="group relative">
+                    <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg">
+                        <a href="https://scholar.google.com/citations?user=MY2W9d4AAAAJ" target="_blank" rel="noopener noreferrer" class="hover:underline">Joseph Chee Chang</a>
+                    </h3>
+                    <p class="text-sm text-stone-500 font-medium">Allen Institute for AI</p>
+                    <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
+                        <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
+                        <p class="leading-relaxed">Senior researcher focused on human-AI systems for sensemaking and managing information overload. Recent work centers on literature review support tools for searching, discovering, and synthesizing research papers.</p>
+                    </div>
+                </div>
 
-        <div class="group relative">
-            <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg cursor-help">Lucy Lu Wang</h3>
-            <p class="text-sm text-stone-500 font-medium">University of Washington</p>
-            <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
-                <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
-                <p class="leading-relaxed">Improves accessibility of scientific text for high-expertise domains like healthcare. Co-organizer of SciNLP and Scholarly Document Processing workshops. Visiting scientist at the Allen Institute for AI.</p>
-            </div>
-        </div>
+                <div class="group relative">
+                    <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg">
+                        <a href="https://llwang.net/" target="_blank" rel="noopener noreferrer" class="hover:underline">Lucy Lu Wang</a>
+                    </h3>
+                    <p class="text-sm text-stone-500 font-medium">University of Washington</p>
+                    <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
+                        <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
+                        <p class="leading-relaxed">Improves accessibility of scientific text for high-expertise domains like healthcare. Co-organizer of SciNLP and Scholarly Document Processing workshops.</p>
+                    </div>
+                </div>
 
-        <div class="group relative">
-            <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg cursor-help">Marti A. Hearst</h3>
-            <p class="text-sm text-stone-500 font-medium">UC Berkeley</p>
-            <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
-                <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
-                <p class="leading-relaxed">Professor with research in user interfaces for search, information visualization for text, and computational linguistics. ACM Fellow and ALF. Former ACL President. Led the Semantic Reader project on augmented reading interfaces.</p>
-            </div>
-        </div>
+                <div class="group relative">
+                    <h3 class="font-bold text-stone-900 group-hover:text-forest-700 transition-colors text-lg">
+                        <a href="https://people.ischool.berkeley.edu/~hearst/" target="_blank" rel="noopener noreferrer" class="hover:underline">Marti A. Hearst</a>
+                    </h3>
+                    <p class="text-sm text-stone-500 font-medium">UC Berkeley</p>
+                    <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-72 bg-white border border-stone-200 rounded-lg p-4 shadow-lg z-10 text-xs text-stone-600">
+                        <p class="font-semibold text-stone-900 mb-2">Expertise:</p>
+                        <p class="leading-relaxed">Professor with research in user interfaces for search, information visualization for text, and computational linguistics. ACM Fellow and ALF. Former ACL President. Led the Semantic Reader project on augmented reading interfaces.</p>
+                    </div>
+                </div>
 
-    </div>
-</section>
+            </div>
+        </section>
 
 
         <!-- Footer -->
         <footer class="pt-8 border-t border-stone-200 text-sm text-stone-500 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p class="font-medium">&copy; 2026 CHI 2026 Workshop on STAR.</p>
+            <p class="font-medium">&copy; 2026 CHI STAR Workshop Team.</p>
+            <p class="font-small">Website created with Gemini support</p>
+
             <div class="flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-forest-500"></span>
-                <span class="font-bold text-forest-900">Barcelona, Spain</span>
+                <a href="https://chi2026.acm.org/" target="_blank" rel="noopener noreferrer" class="font-bold text-forest-900 hover:underline">Barcelona, Spain</a>
+                <span class="text-stone-300">&bull;</span>
+                <span class="text-stone-500">13–17 April 2026</span>
             </div>
         </footer>
 
