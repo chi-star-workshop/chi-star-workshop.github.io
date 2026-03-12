@@ -4,7 +4,7 @@
   "description": "A simple single-page responsive website for a workshop.",
   "main": "src/index.html",
   "scripts": {
-    "start": "live-server src"
+    "start": "live-server ."
   },
   "keywords": [
     "workshop",
